@@ -1,0 +1,378 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .imagini-container {
+  width: 50%;
+  height: 50vh;
+  float: right;
+  background-color: transparent;
+  max-width: 50%;
+
+}
+
+.imagini-container img {
+  display: block;
+  margin: 130px auto;
+  width: 240px;
+  height: 400px;
+  border-radius: 60px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.imagini-container img:hover {
+  transform: scale(1.6); /* Mărește imaginea la hover */
+}
+    .password-container {
+      position: relative;
+    }
+
+    .password-icon {
+      position: absolute;
+      top: 22%;
+      left: 0px;
+      transform: translateY(-50%);
+    }
+
+    body {
+      background-image: url('fundal.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain; /*era 100% 100%*/
+      font-family: verdana;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body.dark-mode {
+      background-color: #222;
+      color: #00cd59;
+    }
+
+    /* Stilurile pentru butonul de comutare a modului întunecat */
+    #theme-toggle-button {
+      font-size: 17px;
+      width: 7em; 
+      height: auto;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+
+    /* Ascunde checkbox-ul HTML implicit */
+    #toggle {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    #container,
+    #patches,
+    #stars,
+    #button,
+    #sun,
+    #moon,
+    #cloud {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.25s;
+    }
+
+    /* Fundal pentru cerul nopții */
+    #toggle:checked + svg #container {
+      fill: #2b4360;
+    }
+
+    /* Mută butonul spre dreapta când este bifat */
+    #toggle:checked + svg #button {
+      transform: translate(28px, 2.333px);
+    }
+
+    /* Afișează/ascunde soarele și luna în funcție de starea checkbox-ului */
+    #sun {
+      opacity: 1;
+    }
+
+    #toggle:checked + svg #sun {
+      opacity: 0;
+    }
+
+    #moon {
+      opacity: 0;
+    }
+
+    #toggle:checked + svg #moon {
+      opacity: 1;
+    }
+
+    /* Afișează sau ascunde elementele de fundal în funcție de starea checkbox-ului */
+    .cloud {
+      width: 50px; /* Redu lățimea norului */
+      height: 30px; /* Redu înălțimea norului */
+      font-size: 14px; /* Redu dimensiunea textului norului */
+    }
+    
+    
+    #toggle:checked + svg .cloud {
+      opacity: 1;
+    }
+    
+    #toggle:checked + svg #cloud {
+      opacity: 0;
+    }
+    
+    
+
+    #stars {
+      opacity: 0;
+    }
+
+    #toggle:checked + svg #stars {
+      opacity: 1;
+    }
+
+    nav {
+      padding-right: 800px;
+    }
+
+    nav a {
+      background-color: #0077cc;
+      text-decoration: none;
+      color: #333;
+      border: 3px solid #080808;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(130, 235, 238, 0.9);
+    }
+    
+    tr:nth-child(odd) {
+      background-color: rgba(50, 69, 195, 0.9);
+    }    
+    
+
+    .dropbtn {
+      font-size: 20px;
+    }
+
+    /* Stilurile pentru butonul de autentificare */
+    .button {
+      position: relative;
+      width: 120px;
+      height: 40px;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      color: white;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+      padding: 12px;
+      gap: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: -4px;
+      top: -1px;
+      margin: auto;
+      width: 128px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+      z-index: -10;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .button::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(20px);
+    }
+
+    .button:hover::after {
+      filter: blur(30px);
+    }
+
+    .button:hover::before {
+      transform: rotate(-180deg);
+    }
+
+    .button:active::before {
+      transform: scale(0.7);
+    }    
+
+    /* Stilurile pentru pop-up */
+    #loginPopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      z-index: 9999;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 20%;
+      max-width: 400px;
+    }
+
+    /* Stil pentru titlul pop-up-ului de autentificare */
+    #loginPopup h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    /* Stilurile pentru formularul de autentificare */
+    #loginForm {
+      margin-top: 15px;
+    }
+
+    /* Stil pentru inputurile formularului de autentificare */
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+      width: 50%;
+      height: 40px;
+      line-height: 30px;
+      padding: 0 4rem;
+      padding-left: 3rem;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      outline: none;
+      background-color: #f8fafc;
+      color: #0d0c22;
+      transition: .5s ease;
+      margin-bottom: 15px;
+    }
+
+    #loginForm input[type="text"]::placeholder,
+    #loginForm input[type="password"]::placeholder {
+      color: #94a3b8;
+    }
+
+    #loginForm input[type="text"]:focus,
+    #loginForm input[type="password"]:focus,
+    #loginForm input[type="text"]:hover,
+    #loginForm input[type="password"]:hover {
+      outline: none;
+      border-color: rgba(129, 140, 248);
+      background-color: #fff;
+      box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+    }
+
+    /* Stil pentru iconul din input */
+    #loginForm .icon {
+      position: absolute;
+      left: 1rem;
+      fill: none;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Stil pentru butonul de autentificare */
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      transition: 0.5s;
+      background: #1e1e1e;
+      cursor: pointer;
+      color: greenyellow;
+      box-shadow: 0 0 10px #363636, inset 0 0 10px #363636;
+    }
+    
+    .button:hover {
+      animation: pulse 0.5s 1 linear;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(0.7, 1.3);
+      }
+      25% {
+        transform: scale(1.3, 0.7);
+      }
+      50% {
+        transform: scale(0.7, 1.3);
+      }
+      75% {
+        transform: scale(1.3, 0.7);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    
+
+    /* Adăugat un strat suplimentar pentru a evita suprapunerea */
+    #content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Stil pentru containerul butonului "X" */
+    .closeButtonContainer {
+      position: absolute;
+      top: 10px; /* Ajustează distanța de la marginea de sus */
+      right: 10px; /* Ajustează distanța de la marginea din dreapta */
+      width: 40px; /* Ajustează lățimea containerului */
+      height: 40px; /* Ajustează înălțimea containerului */
+    }
+
+    /* Stil pentru butonul "X" */
+    .closeButton {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      text-align: center;
+      line-height: 40px; /* Asigură centrarea verticală */
+      cursor: pointer;
+      font-weight: bold;
+      color: #000; /* Schimbă culoarea textului */
+    }
+
+    /* Stil pentru butonul "X" într-un pătrat */
+    .closeButtonSquare {
+      width: 85%;
+      height: 85%;
+      background-color: #ccc;
+      border-radius: 5px; /* Ajustează pentru a face pătratul */
+      text-align: center;
+      line-height: 40px; /* Asigură centrarea verticală */
+      cursor: pointer;
+      font-weight: bold;
+    }
+    

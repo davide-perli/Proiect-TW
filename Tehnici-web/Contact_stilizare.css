@@ -1,0 +1,263 @@
+body {
+    /* background-image: url('Background_Contact.jpg'); */
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+h1 {
+    border: 2px solid DodgerBlue;
+    color: Azure;
+    background-image: url('Background_Contact.jpg');
+    text-align: center;
+    font-size: 70px;
+    font-weight: 900;
+    font-family: 'Arial', sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 30px;
+    text-decoration: underline #751c1c;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.contact-info {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.contact-info a {
+    color: DodgerBlue;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.back-to-home {
+border: none;
+display: block;
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+padding: 0.7em 2.4em;
+font-size: 18px;
+background: transparent;
+cursor: pointer;
+user-select: none;
+overflow: hidden;
+color: royalblue;
+z-index: 1;
+font-family: inherit;
+font-weight: 500;
+}
+
+.back-to-home span {
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: transparent;
+z-index: -1;
+border: 4px solid royalblue;
+}
+
+.back-to-home span::before {
+content: "";
+display: block;
+position: absolute;
+width: 8%;
+height: 500%;
+background: var(--lightgray);
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(-60deg);
+transition: all 0.3s;
+}
+
+.back-to-home:hover span::before {
+transform: translate(-50%, -50%) rotate(-90deg);
+width: 100%;
+background: royalblue;
+}
+
+.back-to-home:hover {
+color: white;
+}
+
+.back-to-home:active span::before {
+background: #2751cd;
+}
+  
+  
+  body.dark-mode {
+      background-color: #222;
+      color: #ffffff;
+    }
+
+    body.dark-mode h1 {
+      color: white !important; /* Asigurăm prioritatea maximă pentru culoarea textului */
+      background-image: none;
+      border: 2px solid white;
+    }
+  
+
+  #theme-toggle-button {
+    font-size: 17px;
+    position: fixed;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+    bottom: 20px; /* Mutăm butonul în colțul din stânga jos */
+    left: 20px; /* Mutăm butonul în colțul din stânga jos */
+  }
+  
+  /* Hide default HTML checkbox */
+  #toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #container,
+  #patches,
+  #stars,
+  #button,
+  #sun,
+  #moon,
+  #cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+  }
+  
+  /* night sky background */
+  #toggle:checked + svg #container {
+    fill: #2b4360;
+  }
+  
+  /* move button to right when checked */
+  #toggle:checked + svg #button {
+    transform: translate(28px, 2.333px);
+  }
+  
+  /* show/hide sun and moon based on checkbox state */
+  #sun {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #sun {
+    opacity: 0;
+  }
+  
+  #moon {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #moon {
+    opacity: 1;
+  }
+  
+  /* show or hide background items on checkbox state */
+  #cloud {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #cloud {
+    opacity: 0;
+  }
+  
+  #stars {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #stars {
+    opacity: 1;
+  }
+
+  .loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 90px;
+}
+
+    .loader:before {
+        content: "";
+        position: absolute;
+        bottom: 30px;
+        left: 50px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background: #2a9d8f;
+        animation: loading-bounce 0.5s ease-in-out infinite alternate;
+    }
+
+    .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 7px;
+    width: 45px;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #000000, -35px 50px 0 #000000, -70px 95px 0 #000000;
+    animation: loading-step 1s ease-in-out infinite;
+    }
+
+  
+  @keyframes loading-bounce {
+    0% {
+      transform: scale(1, 0.7);
+    }
+  
+    40% {
+      transform: scale(0.8, 1.2);
+    }
+  
+    60% {
+      transform: scale(1, 1);
+    }
+  
+    100% {
+      bottom: 140px;
+    }
+  }
+  
+  @keyframes loading-step {
+    0% {
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+              0 10px 0 #000000,
+              -35px 50px 0 #000000,
+              -70px 90px 0 #000000;
+    }
+  
+    100% {
+      box-shadow: 0 10px 0 #000000,
+              -35px 50px 0 #000000,
+              -70px 90px 0 #000000,
+              -70px 90px 0 rgba(0, 0, 0, 0);
+    }
+  }

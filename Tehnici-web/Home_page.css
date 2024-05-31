@@ -1,0 +1,66 @@
+.back-to-home {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6em 2em;
+    width: 30px; /* Lățimea butonului */
+    height: 10px; /* Înălțimea butonului */
+    border: mediumspringgreen solid 0.15em;
+    border-radius: 0.25em;
+    background-color: rgba(0, 0, 255, 0.5); /* Albastru transparent */
+    color: #fff; /* Culoarea textului */
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+    z-index: 999;
+}
+
+.back-to-home:hover {
+    background-color: rgba(33, 33, 255, 0.5); /* Albastru mai închis la hover */
+}
+
+.back-to-home:active {
+    background-color: teal; /* Culoarea de fundal la click */
+}
+
+.back-to-home::after, .back-to-home::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: mediumspringgreen;
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+}
+
+.back-to-home::before {
+    left: 0;
+    transform: translateX(-8em);
+}
+
+.back-to-home::after {
+    right: 0;
+    transform: translateX(8em);
+}
+
+.back-to-home:hover:before {
+    transform: translateX(-1em);
+}
+
+.back-to-home:hover:after {
+    transform: translateX(1em);
+}
+
+.back-to-home:active:before,
+.back-to-home:active:after {
+    background: teal;
+}

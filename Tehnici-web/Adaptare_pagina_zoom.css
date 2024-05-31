@@ -1,0 +1,46 @@
+/* Stilurile generale ale paginii */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid layout pentru conținut */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    background-color: #ccc;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+/* Media query pentru ecrane mai mici (de ex. tablete și telefoane) */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 10px;
+    }
+    .grid-item {
+        padding: 10px;
+    }
+}
+
+/* Media query pentru ecrane mici (de ex. telefoane mobile) */
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Stiluri pentru imagini */
+img {
+    max-width: 100%;
+    height: auto;
+}
