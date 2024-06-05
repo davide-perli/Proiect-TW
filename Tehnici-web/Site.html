@@ -213,43 +213,6 @@
   </div>
 
   <script>
-    // Funcția pentru afișarea formularului de autentificare atunci când utilizatorul face clic pe "Blog"
-    function showLoginFormAndRedirect() {
-      document.getElementById("loginPopup").style.display = "block"; // Arată formularul de autentificare
-    }
-  
-    // Funcție pentru închiderea pop-up-ului de autentificare atunci când utilizatorul face clic pe butonul "X"
-    function closeLoginForm() {
-      document.getElementById("loginPopup").style.display = "none"; // Ascunde formularul de autentificare
-    }
-  
-    // Funcție pentru autentificarea utilizatorului și redirecționarea către Blog.html
-    function authenticateUser() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-
-  // Verifică dacă utilizatorul a introdus un username
-  if (!username) {
-    alert("Introduceți un username.");
-    return;
-  }
-
-  // Verifică dacă utilizatorul a introdus o parolă
-  if (!password) {
-    alert("Introduceți o parolă.");
-    return;
-  }
-
-  // Construiește URL-ul pentru Blog.html, includând și parola
-  var url = "Blog.html?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
-
-  // Redirecționează către URL-ul construit
-  window.location.href = url;
-  }
-
-  </script>
-
-  <script>
     function light(sw) {
       var pic;
       if (sw == 0) {
@@ -282,7 +245,10 @@
   </p>
 
   <footer>
-    <h4 style="text-align: right; margin-right: 20px;">Perli Davide</h4>
+    <h4 style="text-align: right; margin-right: 200px;">Helios Strength</h4>
   </footer>
+
+  <script src="authentification.js"></script>
+
 </body>
 </html>
