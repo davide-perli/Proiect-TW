@@ -23,7 +23,7 @@
 }
 
 .imagini-container img:hover {
-  transform: scale(1.6); /* Mărește imaginea la hover */
+  transform: scale(1.6);
 }
     .password-container {
       position: relative;
@@ -113,9 +113,9 @@
 
     /* Afișează sau ascunde elementele de fundal în funcție de starea checkbox-ului */
     .cloud {
-      width: 50px; /* Redu lățimea norului */
-      height: 30px; /* Redu înălțimea norului */
-      font-size: 14px; /* Redu dimensiunea textului norului */
+      width: 50px;
+      height: 30px;
+      font-size: 14px;
     }
     
     
@@ -346,10 +346,10 @@
     /* Stil pentru containerul butonului "X" */
     .closeButtonContainer {
       position: absolute;
-      top: 10px; /* Ajustează distanța de la marginea de sus */
-      right: 10px; /* Ajustează distanța de la marginea din dreapta */
-      width: 40px; /* Ajustează lățimea containerului */
-      height: 40px; /* Ajustează înălțimea containerului */
+      top: 10px; 
+      right: 10px; 
+      width: 40px; 
+      height: 40px; 
     }
 
     /* Stil pentru butonul "X" */
@@ -358,10 +358,10 @@
       height: 100%;
       background-color: transparent;
       text-align: center;
-      line-height: 40px; /* Asigură centrarea verticală */
+      line-height: 40px; 
       cursor: pointer;
       font-weight: bold;
-      color: #000; /* Schimbă culoarea textului */
+      color: #000; 
     }
 
     /* Stil pentru butonul "X" într-un pătrat */
@@ -369,9 +369,9 @@
       width: 85%;
       height: 85%;
       background-color: #ccc;
-      border-radius: 5px; /* Ajustează pentru a face pătratul */
+      border-radius: 5px; 
       text-align: center;
-      line-height: 40px; /* Asigură centrarea verticală */
+      line-height: 40px;
       cursor: pointer;
       font-weight: bold;
     }

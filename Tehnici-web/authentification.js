@@ -28,10 +28,8 @@
     // Salvează datele de autentificare în localStorage
     localStorage.setItem('authData', JSON.stringify({ username: username, password: password }));
   
-    // Construiește URL-ul pentru Blog.html, includând și parola
     var url = "Blog.html?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
   
-    // Redirecționează către URL-ul construit
     window.location.href = url;
     }
 
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (authData) {
         var parsedAuthData = JSON.parse(authData);
         console.log('User already logged in as:', parsedAuthData.username);
-        // Aici poți să prepopulezi câmpurile de username și password
         document.getElementById('username').value = parsedAuthData.username;
         document.getElementById('password').value = parsedAuthData.password;
     }
@@ -52,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var formData = new FormData(this);
-    // Aici poți valida și gestiona datele formularului înainte de a le trimite
     console.log('Datele formularului de autentificare:', formData);
 });
 
 // Afișarea unui mesaj random la încărcarea paginii
-window.onload = function execute_on_page_load() {
+window.onload = function execute_on_page_load() 
+{
     const arrMessages = ["Bine a-ti venit la magazinnul de calisthenics Helios Strength"];
     
     function getRandomMessage() {
@@ -109,3 +106,15 @@ const Helios = document.querySelector('h1');
 const colors = ['purple', 'black', 'grey', 'blue'];
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
 Helios.style.color = randomColor;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+    setTimeout(() => {
+        alert('Vizitati maggazinul pentru a plasa o comanda');
+    }, 10000);
+
+    setInterval(() => {
+        console.log('Au trecut 20 de secunde');
+    }, 20000);
+
+});

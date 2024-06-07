@@ -176,8 +176,8 @@ body.dark-mode {
   display: inline-block;
   width: 7em;
   cursor: pointer;
-  bottom: 20px; /* Mutăm butonul în colțul din stânga jos */
-  left: 20px; /* Mutăm butonul în colțul din stânga jos */
+  bottom: 20px;
+  left: 20px; 
 }
 
 /* Hide default HTML checkbox */
